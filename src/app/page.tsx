@@ -19,12 +19,32 @@ export default function Home() {
     <div className="min-h-screen ">
       <Navbar />
       {data && (
-        <PieChart
-          data={data}
-          groupByColumnName="Fund Type"
-          columnToSum="Amount"
-          title="Spendings by Core and Trust"
-        />
+        <div className="flex justify-between">
+          <div className="w-1/3">
+            <PieChart
+              data={data}
+              groupByColumnName="Fund Type"
+              columnToSum="Amount"
+              title="Total Reimbursements grouped by Core, Grant and Trust"
+            />
+          </div>
+          <div className="w-1/3">
+            <PieChart
+              data={data}
+              groupByColumnName="Spending Category"
+              columnToSum="Amount"
+              title="Total Reimbursements grouped by Fund Category"
+            />
+          </div>
+          <div className="w-1/3">
+            <PieChart
+              data={data}
+              groupByColumnName="Requester"
+              columnToSum="Amount"
+              title="Total Reimbursements grouped by Requester"
+            />
+          </div>
+        </div>
       )}
     </div>
   );

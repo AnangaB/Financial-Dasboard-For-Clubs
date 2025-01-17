@@ -51,10 +51,10 @@ export default function PieChart({
   const options = {
     plugins: {
       title: {
-        display: true, // Ensure the title is displayed
+        display: true,
         text: title,
         font: {
-          size: 18, // Adjust the font size of the title
+          size: 18,
         },
         padding: {
           top: 10,
@@ -64,7 +64,7 @@ export default function PieChart({
     },
   };
   return (
-    <div className="w-1/2">
+    <div>
       <Pie data={dataForChart} options={options} />
     </div>
   );
