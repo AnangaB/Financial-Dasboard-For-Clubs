@@ -13,7 +13,7 @@ export default function Navbar() {
             Home
           </Link>
 
-          <Link href="/dataTable" aria-current="page">
+          <Link href="/table" aria-current="page">
             Data Table
           </Link>
         </div>
