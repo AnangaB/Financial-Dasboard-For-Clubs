@@ -1,5 +1,6 @@
 "use client";
 
+import BarChart from "@/components/Charts/BarChart";
 import PieChart from "@/components/Charts/pieChart";
 import Navbar from "@/components/Navbar/Navbar";
 import { setDataAndColumns } from "@/logic/common/getRawData";
@@ -15,13 +16,14 @@ export default function Home() {
     setDataAndColumns(setData, setColumns);
     console.log(columns);
   }, []);
+
   return (
     <div className="min-h-screen ">
       <Navbar />
       {data && (
         <div className="flex justify-between">
           <div className="w-1/3">
-            <PieChart
+            <BarChart
               data={data}
               groupByColumnName="Fund Type"
               columnToSum="Amount"
