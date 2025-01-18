@@ -1,29 +1,54 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Navbar() {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen((prev) => !prev);
+  };
+
   return (
-    <nav className="bg-white">
-      <div className="flex justify-between flex-wrap items-center p-8">
-        <div className="w-full text-2xl sm:w-1/2 lg:w-1/4">
-          <Link className=" hover:bg-sky-400 p-6" href="/">
-            <span>Finances Visualizer</span>
-          </Link>
+    <nav className="bg-sky-100">
+      <div className="flex justify-between flex-wrap items-center p-6">
+        <div className="w-full sm:w-auto flex flex-row justify-between">
+          <div className="text-xl sm:text-2xl lg:w-1/4">
+            <Link className=" hover:bg-sky-400 p-6" href="/">
+              <span>Finances Visualizer</span>
+            </Link>
+          </div>
+
+          <button
+            id="dropdownDefaultButton"
+            data-dropdown-toggle="dropdown"
+            className="sm:hidden"
+            type="button"
+            onClick={toggleDropdown}
+          >
+            <i className="bi bi-list text-5xl"></i>
+          </button>
         </div>
 
-        <div className="flex flex-wrap justify-end w-full sm:w-1/2 lg:w-2/3 xl:w-1/3">
-          <div className="w-full text-lg sm:w-1/2 md:w-1/2 lg:w-1/3">
+        <div
+          className={
+            dropdownOpen
+              ? "flex flex-col	sm:flex-row	justify-end w-full sm:w-1/2 lg:w-2/3 xl:w-1/3"
+              : "hidden sm:flex flex-col	sm:flex-row	justify-end w-full sm:w-1/2 lg:w-2/3 xl:w-1/3"
+          }
+        >
+          <div className="text-lg ">
             <Link
-              className=" hover:bg-sky-400 h-100 p-6"
+              className=" hover:bg-sky-400 h-100 p-6 m-2"
               href="/"
               aria-current="page"
             >
               Home
             </Link>
           </div>
-          <div className="w-full text-lg sm:w-1/2 md:w-1/2 lg:w-1/3">
+          <div className="text-lg">
             <Link
-              className=" hover:bg-sky-400 p-6"
+              className=" hover:bg-sky-400 p-6 m-2"
               href="/table"
               aria-current="page"
             >
