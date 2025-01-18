@@ -52,6 +52,7 @@ export default function PieChart({
   };
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       autocolors: {
         mode: "data" as autocolors,
@@ -74,7 +75,7 @@ export default function PieChart({
     },
   };
   return (
-    <div>
+    <div className="h-screen max-h-[60vh]">
       <Pie data={dataForChart} options={options} />
     </div>
   );

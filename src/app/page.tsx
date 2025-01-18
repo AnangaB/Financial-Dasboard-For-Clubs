@@ -18,11 +18,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen h-full ">
       <Navbar />
       {data && (
-        <div className="flex justify-between flex-wrap items-center	">
-          <div className="w-1/3">
+        <div className="flex justify-between flex-wrap items-center">
+          <div className="w-full md:w-1/2 xl:w-1/3">
             <BarChart
               data={data}
               groupByColumnName="Fund Type"
@@ -30,7 +30,7 @@ export default function Home() {
               title="Total Reimbursements grouped by Core, Grant and Trust"
             />
           </div>
-          <div className="w-1/3">
+          <div className="w-full md:w-1/2 xl:w-1/3">
             <PieChart
               data={data}
               groupByColumnName="Spending Category"
@@ -38,7 +38,7 @@ export default function Home() {
               title="Total Reimbursements grouped by Fund Category"
             />
           </div>
-          <div className="w-1/3">
+          <div className="w-full md:w-1/2 xl:w-1/3">
             <PieChart
               data={data}
               groupByColumnName="Requester"

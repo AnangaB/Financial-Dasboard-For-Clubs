@@ -86,5 +86,9 @@ export default function BarChart({
       },
     },
   };
-  return <Bar data={dataForChart} options={options} />;
+  return (
+    <div className="h-screen max-h-[60vh]">
+      <Bar data={dataForChart} options={options} />
+    </div>
+  );
 }
