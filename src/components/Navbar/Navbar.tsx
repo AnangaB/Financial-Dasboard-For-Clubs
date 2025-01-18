@@ -10,11 +10,11 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-sky-100">
-      <div className="flex justify-between flex-wrap items-center p-6">
-        <div className="w-full sm:w-auto flex flex-row justify-between">
-          <div className="text-xl sm:text-2xl lg:w-1/4">
-            <Link className=" hover:bg-sky-400 p-6" href="/">
+    <nav className="bg-sky-100 p-3">
+      <div className="flex justify-between flex-wrap items-center">
+        <div className="w-full sm:w-auto flex flex-row items-center justify-between">
+          <div className="text-xl sm:text-2xl md:w-full">
+            <Link className=" hover:text-red-700 p-2" href="/">
               <span>Finances Visualizer</span>
             </Link>
           </div>
@@ -26,20 +26,19 @@ export default function Navbar() {
             type="button"
             onClick={toggleDropdown}
           >
-            <i className="bi bi-list text-5xl"></i>
+            <i className="bi bi-list hover:text-red-700  text-5xl"></i>
           </button>
         </div>
-
         <div
-          className={
+          className={`flex flex-col sm:flex-row justify-end w-full sm:w-1/2 lg:w-2/3 xl:w-1/3 transition-all duration-500 ease-out ${
             dropdownOpen
-              ? "flex flex-col	sm:flex-row	justify-end w-full sm:w-1/2 lg:w-2/3 xl:w-1/3"
-              : "hidden sm:flex flex-col	sm:flex-row	justify-end w-full sm:w-1/2 lg:w-2/3 xl:w-1/3"
-          }
+              ? "max-h-screen opacity-100 pointer-events-auto"
+              : "max-h-0 opacity-0 pointer-events-none sm:max-h-screen sm:opacity-100 sm:pointer-events-auto"
+          } overflow-hidden`}
         >
           <div className="text-lg ">
             <Link
-              className=" hover:bg-sky-400 h-100 p-6 m-2"
+              className=" hover:text-red-700 m-2"
               href="/"
               aria-current="page"
             >
@@ -48,7 +47,7 @@ export default function Navbar() {
           </div>
           <div className="text-lg">
             <Link
-              className=" hover:bg-sky-400 p-6 m-2"
+              className="hover:text-red-700  m-2"
               href="/table"
               aria-current="page"
             >
