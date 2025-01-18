@@ -21,7 +21,7 @@ export default function Home() {
     <div className="min-h-screen ">
       <Navbar />
       {data && (
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-wrap align-center">
           <div className="w-1/3">
             <BarChart
               data={data}

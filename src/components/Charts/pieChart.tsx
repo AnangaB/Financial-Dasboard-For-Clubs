@@ -7,6 +7,7 @@ import {
   Legend,
   Title,
   Colors,
+  ChartEvent,
 } from "chart.js";
 import * as d3 from "d3";
 ChartJS.register(ArcElement, Tooltip, Legend, Title, Colors);
@@ -49,6 +50,7 @@ export default function PieChart({
     ],
   };
   const options = {
+    responsive: true,
     plugins: {
       title: {
         display: true,
@@ -56,10 +58,14 @@ export default function PieChart({
         font: {
           size: 18,
         },
+
         padding: {
           top: 10,
           bottom: 30,
         },
+      },
+      legend: {
+        onClick: (e: ChartEvent) => e.native?.stopPropagation(),
       },
     },
   };
