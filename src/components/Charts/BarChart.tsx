@@ -1,5 +1,7 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import autocolors from "chartjs-plugin-autocolors";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,7 +10,6 @@ import {
   Title,
   Tooltip,
   Legend,
-  Colors,
 } from "chart.js";
 import * as d3 from "d3";
 
@@ -18,7 +19,7 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Colors,
+  autocolors,
   Legend
 );
 type BarChartProps = {
@@ -60,7 +61,12 @@ export default function BarChart({
     ],
   };
   const options = {
+    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
+      autocolors: {
+        mode: "data" as autocolors,
+      },
       title: {
         display: true,
         text: title,
@@ -80,9 +86,5 @@ export default function BarChart({
       },
     },
   };
-  return (
-    <div>
-      <Bar data={dataForChart} options={options} />
-    </div>
-  );
+  return <Bar data={dataForChart} options={options} />;
 }

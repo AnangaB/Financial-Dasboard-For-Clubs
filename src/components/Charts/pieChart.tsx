@@ -1,16 +1,17 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
+import autocolors from "chartjs-plugin-autocolors";
+
 import {
   Chart as ChartJS,
   ArcElement,
   Tooltip,
   Legend,
   Title,
-  Colors,
   ChartEvent,
 } from "chart.js";
 import * as d3 from "d3";
-ChartJS.register(ArcElement, Tooltip, Legend, Title, Colors);
+ChartJS.register(ArcElement, Tooltip, Legend, Title, autocolors);
 
 type PieChartProps = {
   data: d3.DSVRowArray<string>;
@@ -52,6 +53,9 @@ export default function PieChart({
   const options = {
     responsive: true,
     plugins: {
+      autocolors: {
+        mode: "data" as autocolors,
+      },
       title: {
         display: true,
         text: title,
