@@ -1,8 +1,10 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
-
-export default function Navbar() {
+type NavBarProps = {
+  active: string;
+};
+export default function Navbar({ active }: NavBarProps) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -38,7 +40,11 @@ export default function Navbar() {
         >
           <div className="text-lg ">
             <Link
-              className=" hover:text-red-700 m-2"
+              className={
+                active == "Home"
+                  ? " text-red-700 m-2"
+                  : "hover:text-red-700 m-2"
+              }
               href="/"
               aria-current="page"
             >
@@ -47,7 +53,11 @@ export default function Navbar() {
           </div>
           <div className="text-lg">
             <Link
-              className="hover:text-red-700  m-2"
+              className={
+                active == "Data Table"
+                  ? " text-red-700 m-2"
+                  : "hover:text-red-700 m-2"
+              }
               href="/table"
               aria-current="page"
             >
