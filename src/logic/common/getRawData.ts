@@ -5,7 +5,6 @@ export async function setDataAndColumns(setData: (arg0: d3.DSVRowArray<string>) 
         d3.csv("/dataset/fake_society_data.csv")
           .then((loadedData) => {
             setData(loadedData);
-            console.log("loadedData",loadedData)
 
             if (loadedData.columns) {
 
@@ -30,13 +29,9 @@ export async function setDataAndColumns(setData: (arg0: d3.DSVRowArray<string>) 
             }) as d3.DSVRowArray<string>;
 
 
-            console.log("filteredData",filteredData) 
             setReimbursementData(filteredData);
           })
           .catch((error) => {
             console.error("Error loading the CSV file:", error);
-            setData([]);
-            setColumns([]);
-            setReimbursementData([]);
           });
 }

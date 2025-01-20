@@ -41,13 +41,10 @@ export default function BarChart({
     (group) => d3.sum(group, (d) => parseFloat(d[columnToSum]) || 0),
     (d) => d[groupByColumnName]
   );
-  console.log("groupedData", groupedData, " and data received ", data);
   // Extract labels and data for the chart
   const labels = groupedData.map(([key]) => key);
   const dataValues = groupedData.map((d) => d[1]);
 
-  console.log("groupedData", groupedData);
-  console.log("labels and dataset: ", labels, dataValues);
   const dataForChart = {
     labels: labels,
     datasets: [
