@@ -4,8 +4,7 @@ import BarChart from "@/components/Charts/BarChart";
 import LineChart from "@/components/Charts/LineChart";
 import PieChart from "@/components/Charts/pieChart";
 import Navbar from "@/components/Navbar/Navbar";
-import { setDataAndColumns } from "@/logic/common/getRawData";
-import { TableColumns } from "@/type/common/DataTableTypes";
+import { setRawDataAndReimbursementData } from "@/logic/common/setRawDataAndReimbursementData";
 import d3 from "d3";
 import { useEffect, useState } from "react";
 
@@ -14,13 +13,10 @@ export default function Home() {
   const [reimbursementData, setReimbursementData] =
     useState<d3.DSVRowArray<string> | null>(null);
 
-  const [columns, setColumns] = useState<TableColumns[]>([]);
-
   useEffect(() => {
-    setDataAndColumns(setData, setColumns, setReimbursementData);
-    console.log(columns);
+    setRawDataAndReimbursementData(setData, setReimbursementData);
   }, []);
-  
+
   return (
     <div className="min-h-screen h-full ">
       <Navbar active="Home" />
