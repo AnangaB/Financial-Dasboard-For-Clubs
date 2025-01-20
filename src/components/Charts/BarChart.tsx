@@ -37,14 +37,11 @@ export default function BarChart({
 }: BarChartProps) {
   const groupedData = d3.rollups(
     data,
-    (group) =>
-      d3.sum(
-        group,
-        (d) => parseFloat(d[columnToSum]?.replace(/\$/g, "") || "0") // remove dollar signs, and convert to number
-      ),
-    (d) => d[groupByColumnName]!
-  );
 
+    (group) => d3.sum(group, (d) => parseFloat(d[columnToSum]) || 0),
+    (d) => d[groupByColumnName]
+  );
+  console.log("groupedData", groupedData, " and data received ", data);
   // Extract labels and data for the chart
   const labels = groupedData.map(([key]) => key);
   const dataValues = groupedData.map((d) => d[1]);

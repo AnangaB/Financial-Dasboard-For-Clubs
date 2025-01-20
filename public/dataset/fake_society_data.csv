@@ -1,21 +1,22 @@
-Requester,Amount,Fund Type,Grant ID,Grant Name,Reason,Spending Category,Minutes File,Form Created,Form Submitted
-Riley Green,$10.84,Core,,,For the purchase of coffee and tea for the weekly Coffee Social.,Common Room Supplies,meeting_9-6-2025.pdf,TRUE,23-Dec
-Alex Kim,$253.81,Grant,3003,Common Room Supplies Grant,For the purchase of decorations for the Spring Festival.,Events,meeting_9-6-2025.pdf,TRUE,11-Oct
-Jordan Lee,$222.13,Core,,,Purchase of pizza for the Student Movie Night.,Common Room Supplies,meeting_9-6-2025.pdf,TRUE,22-Oct
-Parker Hall,$35.82,Core,,,For the purchase of cleaning supplies for the Common Room.,Events,meeting_9-6-2025.pdf,TRUE,13-Dec
-Jamie Taylor,$267.76,Core,,,Purchase of pizza for the Student Movie Night.,Events,meeting_9-6-2025.pdf,TRUE,09-Oct
-Jamie Taylor,$278.17,Core,,,For the purchase of cleaning supplies for the Common Room.,Events,meeting_9-6-2025.pdf,TRUE,27-Dec
-Jordan Lee,$119.94,Grant,3001,Community Outreach Grant,Reimbursement for hot dogs and condiments for the September BBQ.,Events,meeting_9-6-2025.pdf,TRUE,10-Oct
-Morgan Brown,$178.68,Core,,,For the purchase of decorations for the Spring Festival.,Common Room Supplies,meeting_9-6-2025.pdf,TRUE,29-Oct
-Chris Johnson,$131.05,Core,,,Purchase of prizes for the Student Trivia Night.,Common Room Supplies,meeting_9-6-2025.pdf,TRUE,30-Oct
-Casey White,$188.40,Core,,,For the purchase of cleaning supplies for the Common Room.,Common Room Supplies,meeting_9-6-2025.pdf,TRUE,10-Oct
-Parker Hall,$222.01,Grant,3004,Student Wellness Grant,Reimbursement for hot dogs and condiments for the September BBQ.,Common Room Supplies,meeting_9-6-2025.pdf,TRUE,27-Oct
-Taylor Smith,$268.23,Grant,3004,Student Wellness Grant,Purchase of pizza for the Student Movie Night.,Meeting Food,meeting_9-6-2025.pdf,TRUE,05-Oct
-Parker Hall,$44.26,Core,,,For the purchase of materials for the Art Workshop.,Meeting Food,meeting_9-6-2025.pdf,TRUE,01-Dec
-Jordan Lee,$110.41,Core,,,Reimbursement for workshop materials for the Career Development Event.,Meeting Food,meeting_9-6-2025.pdf,TRUE,13-Oct
-Jordan Lee,$204.83,Grant,3004,Student Wellness Grant,For the purchase of decorations for the Spring Festival.,Miscellaneous,meeting_9-6-2025.pdf,TRUE,11-Oct
-Chris Johnson,$15.27,Core,,,Purchase of pizza for the Student Movie Night.,Miscellaneous,meeting_9-6-2025.pdf,TRUE,15-Dec
-Casey White,$232.85,Grant,3004,Student Wellness Grant,For the purchase of coffee and tea for the weekly Coffee Social.,Miscellaneous,meeting_9-6-2025.pdf,TRUE,31-Oct
-Cameron Adams,$191.68,Core,,,Reimbursement for workshop materials for the Career Development Event.,Meeting Food,meeting_9-6-2025.pdf,TRUE,16-Oct
-Cameron Adams,$142.12,Grant,3001,Community Outreach Grant,For the purchase of decorations for the Spring Festival.,Meeting Food,meeting_9-6-2025.pdf,TRUE,14-Oct
-Alex Kim,$56.06,Grant,3001,Community Outreach Grant,For the purchase of cleaning supplies for the Common Room.,Miscellaneous,meeting_9-6-2025.pdf,TRUE,13-Dec
+Requester,Semester,Amount,Fund Type,Grant ID,Grant Name,Reason,Spending Category,Minutes File,Form Created,Form Submitted
+Core Addition,Fall 2024,1000.00,Core,,,Core Addition,,,,
+Riley Green,Fall 2024,-10.84 ,Core,,,For the purchase of coffee and tea for the weekly Coffee Social.,Common Room Supplies,meeting_9-6-2025.pdf,TRUE,23-Dec
+Alex Kim,Fall 2024,-253.81 ,Grant,3003,Common Room Supplies Grant,For the purchase of decorations for the Spring Festival.,Events,meeting_9-6-2025.pdf,TRUE,11-Oct
+Jordan Lee,Fall 2024,-222.13 ,Core,,,Purchase of pizza for the Student Movie Night.,Common Room Supplies,meeting_9-6-2025.pdf,TRUE,22-Oct
+Parker Hall,Fall 2024,-35.82 ,Core,,,For the purchase of cleaning supplies for the Common Room.,Events,meeting_9-6-2025.pdf,TRUE,13-Dec
+Jamie Taylor,Fall 2024,-267.76 ,Core,,,Purchase of pizza for the Student Movie Night.,Events,meeting_9-6-2025.pdf,TRUE,09-Oct
+Jamie Taylor,Fall 2024,-278.17 ,Core,,,For the purchase of cleaning supplies for the Common Room.,Events,meeting_9-6-2025.pdf,TRUE,27-Dec
+Jordan Lee,Fall 2024,-119.94 ,Grant,3001,Community Outreach Grant,Reimbursement for hot dogs and condiments for the September BBQ.,Events,meeting_9-6-2025.pdf,TRUE,10-Oct
+Morgan Brown,Fall 2024,-178.68 ,Core,,,For the purchase of decorations for the Spring Festival.,Common Room Supplies,meeting_9-6-2025.pdf,TRUE,29-Oct
+Chris Johnson,Fall 2024,-131.05 ,Core,,,Purchase of prizes for the Student Trivia Night.,Common Room Supplies,meeting_9-6-2025.pdf,TRUE,30-Oct
+Casey White,Fall 2024,-188.40 ,Core,,,For the purchase of cleaning supplies for the Common Room.,Common Room Supplies,meeting_9-6-2025.pdf,TRUE,10-Oct
+Parker Hall,Fall 2024,-222.01 ,Grant,3004,Student Wellness Grant,Reimbursement for hot dogs and condiments for the September BBQ.,Common Room Supplies,meeting_9-6-2025.pdf,TRUE,27-Oct
+Taylor Smith,Fall 2024,-268.23 ,Grant,3004,Student Wellness Grant,Purchase of pizza for the Student Movie Night.,Meeting Food,meeting_9-6-2025.pdf,TRUE,05-Oct
+Parker Hall,Fall 2024,-44.26 ,Core,,,For the purchase of materials for the Art Workshop.,Meeting Food,meeting_9-6-2025.pdf,TRUE,01-Dec
+Jordan Lee,Fall 2024,-110.41 ,Core,,,Reimbursement for workshop materials for the Career Development Event.,Meeting Food,meeting_9-6-2025.pdf,TRUE,13-Oct
+Jordan Lee,Fall 2024,-204.83 ,Grant,3004,Student Wellness Grant,For the purchase of decorations for the Spring Festival.,Miscellaneous,meeting_9-6-2025.pdf,TRUE,11-Oct
+Chris Johnson,Spring 2025,-15.27 ,Core,,,Purchase of pizza for the Student Movie Night.,Miscellaneous,meeting_9-6-2025.pdf,TRUE,15-Dec
+Casey White,Spring 2025,-232.85 ,Grant,3004,Student Wellness Grant,For the purchase of coffee and tea for the weekly Coffee Social.,Miscellaneous,meeting_9-6-2025.pdf,TRUE,31-Oct
+Cameron Adams,Spring 2025,-191.68 ,Core,,,Reimbursement for workshop materials for the Career Development Event.,Meeting Food,meeting_9-6-2025.pdf,TRUE,16-Oct
+Cameron Adams,Spring 2025,-142.12 ,Grant,3001,Community Outreach Grant,For the purchase of decorations for the Spring Festival.,Meeting Food,meeting_9-6-2025.pdf,TRUE,14-Oct
+Alex Kim,Spring 2025,-56.06 ,Grant,3001,Community Outreach Grant,For the purchase of cleaning supplies for the Common Room.,Miscellaneous,meeting_9-6-2025.pdf,TRUE,13-Dec
