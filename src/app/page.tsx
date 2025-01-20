@@ -20,7 +20,7 @@ export default function Home() {
     setDataAndColumns(setData, setColumns, setReimbursementData);
     console.log(columns);
   }, []);
-  console.log(data);
+  
   return (
     <div className="min-h-screen h-full ">
       <Navbar active="Home" />
