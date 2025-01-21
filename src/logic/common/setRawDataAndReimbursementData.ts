@@ -33,6 +33,7 @@ export async function setRawData(setData: (arg0: d3.DSVRowArray<string>) => void
 async function getRawCSVData(){
   // Load the CSV file and update the state with the data
     const url = "/dataset/fake_society_data.csv"
+    //const url = "/dataset/cheque_req_requests.csv"
     return d3.csv(url).catch((error) => {
       console.error("Error loading the CSV file:", error);
     });
@@ -44,7 +45,7 @@ function filterDataSet(rawData: d3.DSVRowArray<string>){
   .filter((row) => row["Requester"] !== "Core Addition")
   .map((row) => {
     const newRow = { ...row };
-    newRow["Amount"] = newRow["Amount"]?.replace(/-|\s|\$/g, "") || ""; 
+    newRow["Amount"] = String(newRow["Amount"])?.replace(/-|\s|\$/g, "") || ""; 
     return newRow;
   }) as d3.DSVRowArray<string>;
   return filteredData;

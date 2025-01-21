@@ -40,4 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-public/private_folder/
+public/dataset/cheque_req_requests.csv

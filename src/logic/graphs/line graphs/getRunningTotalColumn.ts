@@ -1,5 +1,5 @@
-// takes a list of numbers, called amount, and returns a new list, where each entry is the sum of a entry in 'amount' and all the entries before it in 'amount'
-export function getRunningPaymentAmount(amount:number[]){
+
+export function getRunningCoreBalance(amount:number[]){
     console.log(amount)
     if(amount && amount.length > 1){
         const runningTotal: number[] = new Array(amount.length);

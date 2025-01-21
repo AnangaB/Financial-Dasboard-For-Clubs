@@ -9,9 +9,10 @@ import {
   Title,
   Tooltip,
   Legend,
+  TooltipItem,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { getRunningPaymentAmount } from "@/logic/graphs/line graphs/getRunningTotalColumn";
+import { getRunningCoreBalance } from "@/logic/graphs/line graphs/getRunningTotalColumn";
 
 ChartJS.register(
   CategoryScale,
@@ -34,12 +35,14 @@ export default function LineChart({
   moneyColumn,
   title,
 }: LineChartProps) {
-  const runningMoneyValue: number[] = getRunningPaymentAmount(
+  const runningMoneyValue: number[] = getRunningCoreBalance(
     data.map((row) => {
       return parseFloat(row[moneyColumn]?.replaceAll(/\$|\s/g, ""));
     })
   );
   console.log("runningMoneyValue", runningMoneyValue);
+  console.log("data", data);
+
   // Labels for x-axis
   const xAxisLabels = data.map((row) => String(row["Requester"]));
 
@@ -73,7 +76,9 @@ export default function LineChart({
       },
       tooltip: {
         callbacks: {
-          label: (tooltipItem: any) => tooltipLabels[tooltipItem.dataIndex],
+          label: (tooltipItem: TooltipItem<"line">) => {
+            return tooltipLabels[tooltipItem.dataIndex];
+          },
         },
       },
     },
