@@ -40,9 +40,9 @@ async function getRawCSVData(){
 }
 // helper function that filters through rows of data and only only keeps expenses and removes negative signs from the expense amount
 function filterDataSet(rawData: d3.DSVRowArray<string>){
-  console.log(rawData);
   const filteredData = rawData
-  .filter((row) => row["Requester"] !== "Core Addition")
+  .filter((row) =>  !row["Requester"]?.includes("Core Addition") &&
+  !row["Requester"]?.includes("Core Allocation")) 
   .map((row) => {
     const newRow = { ...row };
     newRow["Amount"] = String(newRow["Amount"])?.replace(/-|\s|\$/g, "") || ""; 

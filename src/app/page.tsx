@@ -16,7 +16,6 @@ export default function Home() {
   useEffect(() => {
     setRawDataAndReimbursementData(setData, setReimbursementData);
   }, []);
-
   return (
     <div className="min-h-screen h-full ">
       <Navbar active="Home" />
@@ -26,7 +25,7 @@ export default function Home() {
             <LineChart
               data={data}
               moneyColumn={"Amount"}
-              title="Total Reimbursements grouped by Core, Grant and Trust"
+              title="Core Balance Changes"
             />
           </div>
           <div className="w-full md:w-1/2 xl:w-1/3 p-1">

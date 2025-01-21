@@ -38,10 +38,9 @@ export default function LineChart({
   const runningMoneyValue: number[] = getRunningCoreBalance(
     data.map((row) => {
       return parseFloat(row[moneyColumn]?.replaceAll(/\$|\s/g, ""));
-    })
+    }),
+    data.map((row) => String(row["Fund Type"]))
   );
-  console.log("runningMoneyValue", runningMoneyValue);
-  console.log("data", data);
 
   // Labels for x-axis
   const xAxisLabels = data.map((row) => String(row["Requester"]));
@@ -49,7 +48,7 @@ export default function LineChart({
   // Tooltip labels
   const tooltipLabels = data.map(
     (row) =>
-      `${row["Requester"]}: $${row["Amount"]} (${row["Spending Category"]})`
+      `${row["Requester"]}: $${row["Amount"]} (${row["Spending Category"]} - ${row["Fund Type"]})`
   );
 
   const dataForChart = {
