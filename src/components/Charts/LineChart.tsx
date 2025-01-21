@@ -11,6 +11,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { getRunningPaymentAmount } from "@/logic/graphs/line graphs/getRunningTotalColumn";
 
 ChartJS.register(
   CategoryScale,
@@ -33,18 +34,21 @@ export default function LineChart({
   moneyColumn,
   title,
 }: LineChartProps) {
-  const moneyData: number[] = data.map((row) => {
-    return Number(row[moneyColumn]?.replace(/\$/g, "")) || 0;
-  });
-
-  // Extract labels and data for the chart
-  const labels = moneyData.map((value, i: number) => i);
+  
+  const runningMoneyValue: number[] = getRunningPaymentAmount(
+    data.map((row) => {
+      return parseFloat(row[moneyColumn]?.replaceAll(/\$|\s/g, ""));
+    })
+  );
+  console.log("runningMoneyValue", runningMoneyValue);
+  // Extract labels and dtaa for the chart
+  const labels = runningMoneyValue.map((value, i: number) => i);
 
   const dataForChart = {
     labels: labels,
     datasets: [
       {
-        data: moneyData,
+        data: runningMoneyValue,
       },
     ],
   };
