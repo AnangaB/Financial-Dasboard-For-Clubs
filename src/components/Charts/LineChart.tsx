@@ -34,18 +34,23 @@ export default function LineChart({
   moneyColumn,
   title,
 }: LineChartProps) {
-  
   const runningMoneyValue: number[] = getRunningPaymentAmount(
     data.map((row) => {
       return parseFloat(row[moneyColumn]?.replaceAll(/\$|\s/g, ""));
     })
   );
   console.log("runningMoneyValue", runningMoneyValue);
-  // Extract labels and dtaa for the chart
-  const labels = runningMoneyValue.map((value, i: number) => i);
+  // Labels for x-axis
+  const xAxisLabels = data.map((row) => String(row["Requester"]));
+
+  // Tooltip labels
+  const tooltipLabels = data.map(
+    (row) =>
+      `${row["Requester"]}: $${row["Amount"]} (${row["Spending Category"]})`
+  );
 
   const dataForChart = {
-    labels: labels,
+    labels: xAxisLabels,
     datasets: [
       {
         data: runningMoneyValue,
@@ -66,6 +71,11 @@ export default function LineChart({
       legend: {
         display: false,
       },
+      tooltip: {
+        callbacks: {
+          label: (tooltipItem: any) => tooltipLabels[tooltipItem.dataIndex],
+        },
+      },
     },
     scales: {
       y: {
@@ -75,6 +85,7 @@ export default function LineChart({
       },
     },
   };
+
   return (
     <div className="h-screen max-h-[60vh]">
       <Line data={dataForChart} options={options} />
