@@ -1,5 +1,5 @@
 "use client";
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/common/Navbar/Navbar";
 import { setRawData } from "@/logic/common/setRawDataAndReimbursementData";
 import { Columns, Table } from "antd";
 import * as d3 from "d3";

@@ -3,7 +3,8 @@
 import BarChart from "@/components/Charts/BarChart";
 import LineChart from "@/components/Charts/LineChart";
 import PieChart from "@/components/Charts/pieChart";
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/common/Navbar/Navbar";
+import SemesterBar from "@/components/common/SemesterBar";
 import { setRawDataAndReimbursementData } from "@/logic/common/setRawDataAndReimbursementData";
 import d3 from "d3";
 import { useEffect, useState } from "react";
@@ -19,6 +20,10 @@ export default function Home() {
   return (
     <div className="min-h-screen h-full ">
       <Navbar active="Home" />
+      <SemesterBar
+        activeSemester={"Fall 2024"}
+        semesterList={["Fall 2024", "Spring 2025"]}
+      />
       {data && reimbursementData && (
         <div className="flex justify-between flex-wrap items-center p-1">
           <div className="w-full p-1">
