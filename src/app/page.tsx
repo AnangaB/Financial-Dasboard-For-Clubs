@@ -5,6 +5,7 @@ import LineChart from "@/components/Charts/LineChart";
 import PieChart from "@/components/Charts/pieChart";
 import Navbar from "@/components/common/Navbar/Navbar";
 import SemesterBar from "@/components/common/SemesterBar";
+import { getUniqueSemesterList } from "@/logic/common/Dataset Operations/getSemestersList";
 import { setRawDataAndReimbursementData } from "@/logic/common/setRawDataAndReimbursementData";
 import d3 from "d3";
 import { useEffect, useState } from "react";
@@ -14,16 +15,30 @@ export default function Home() {
   const [reimbursementData, setReimbursementData] =
     useState<d3.DSVRowArray<string> | null>(null);
 
+  const [semesterList, setSemesterList] = useState<string[]>([]);
+
   useEffect(() => {
     setRawDataAndReimbursementData(setData, setReimbursementData);
   }, []);
+
+  //get unique list of semesters used in data, once data is loaded
+  useEffect(() => {
+    if (data) {
+      setSemesterList(getUniqueSemesterList(data));
+    }
+  }, [data]);
+
+  console.log(data);
   return (
     <div className="min-h-screen h-full ">
       <Navbar active="Home" />
-      <SemesterBar
-        activeSemester={"Fall 2024"}
-        semesterList={["Fall 2024", "Spring 2025"]}
-      />
+      {semesterList && semesterList.length > 0 && (
+        <SemesterBar
+          activeSemester={semesterList[0]}
+          semesterList={semesterList}
+        />
+      )}
+
       {data && reimbursementData && (
         <div className="flex justify-between flex-wrap items-center p-1">
           <div className="w-full p-1">
