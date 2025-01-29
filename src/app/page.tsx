@@ -16,6 +16,7 @@ export default function Home() {
     useState<d3.DSVRowArray<string> | null>(null);
 
   const [semesterList, setSemesterList] = useState<string[]>([]);
+  const [activeSemester, setActiveSemester] = useState<string>("Overall");
 
   useEffect(() => {
     setRawDataAndReimbursementData(setData, setReimbursementData);
@@ -24,7 +25,7 @@ export default function Home() {
   //get unique list of semesters used in data, once data is loaded
   useEffect(() => {
     if (data) {
-      setSemesterList(getUniqueSemesterList(data));
+      setSemesterList(["Overall", ...getUniqueSemesterList(data)]);
     }
   }, [data]);
 
@@ -32,9 +33,10 @@ export default function Home() {
   return (
     <div className="min-h-screen h-full ">
       <Navbar active="Home" />
-      {semesterList && semesterList.length > 0 && (
+      {semesterList && semesterList.length > 1 && (
         <SemesterBar
-          activeSemester={semesterList[0]}
+          activeSemester={activeSemester}
+          setActiveSemester={setActiveSemester}
           semesterList={semesterList}
         />
       )}
