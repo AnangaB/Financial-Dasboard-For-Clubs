@@ -38,8 +38,8 @@ async function getRawCSVData(){
       console.error("Error loading the CSV file:", error);
     });
 }
-// helper function that filters through rows of data and only only keeps expenses and removes negative signs from the expense amount
-function filterDataSet(rawData: d3.DSVRowArray<string>){
+// filters through rows of data and only only keeps expenses and removes negative signs from the expense amount
+export function filterDataSet(rawData: d3.DSVRowArray<string>){
   const filteredData = rawData
   .filter((row) =>  !row["Requester"]?.includes("Core Addition") &&
   !row["Requester"]?.includes("Core Allocation")) 
