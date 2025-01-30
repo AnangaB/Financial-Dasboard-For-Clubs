@@ -3,6 +3,7 @@ export function getRunningCoreBalance(amount:number[], amountFundType:string[]){
     if(amount && amount.length > 1 && amountFundType && amountFundType.length > 1){
         const runningTotal: number[] = new Array(amount.length);
         runningTotal[0] = 0
+   
         if (amountFundType[0] === "Core"){
             runningTotal[0] += amount[0]
         }
@@ -18,3 +19,4 @@ export function getRunningCoreBalance(amount:number[], amountFundType:string[]){
     }
     return amount
 }
+
