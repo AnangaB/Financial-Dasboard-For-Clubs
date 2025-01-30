@@ -95,7 +95,7 @@ export default function Home() {
               data={displayReimbursementData}
               groupByColumnName="Spending Category"
               columnToSum="Amount"
-              title={`Categories of funds that was Reimbursed${
+              title={`Reimbursement Categories${
                 activeSemester && activeSemester != "Overall"
                   ? " in " + activeSemester
                   : ""

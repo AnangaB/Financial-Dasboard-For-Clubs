@@ -33,7 +33,7 @@ export default function DataTable() {
   return (
     <div className="min-h-screen w-full">
       <Navbar active="Data Table" />
-      <h1 className="text-center text-2xl">Data Table</h1>
+      <h1 className="text-center text-2xl mt-1">Data Table</h1>
       <div className="overflow-scroll">
         {processedData.length > 0 && column && (
           <Table dataSource={processedData} columns={column as Columns} />
