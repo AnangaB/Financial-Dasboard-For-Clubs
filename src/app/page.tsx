@@ -114,6 +114,39 @@ export default function Home() {
               }`}
             />
           </div>
+
+          <div className="w-full md:w-1/2 p-1">
+            <BarChart
+              data={
+                displayReimbursementData.filter(
+                  (row) => row["Fund Type"] == "Core"
+                ) as d3.DSVRowArray<string>
+              }
+              groupByColumnName="Spending Category"
+              columnToSum="Amount"
+              title={`Reimbursements from Core Categories${
+                activeSemester && activeSemester != "Overall"
+                  ? " in " + activeSemester
+                  : ""
+              }`}
+            />
+          </div>
+          <div className="w-full md:w-1/2 p-1">
+            <BarChart
+              data={
+                displayReimbursementData.filter(
+                  (row) => row["Fund Type"] == "Grant"
+                ) as d3.DSVRowArray<string>
+              }
+              groupByColumnName="Spending Category"
+              columnToSum="Amount"
+              title={`Reimbursements from Grant Categories${
+                activeSemester && activeSemester != "Overall"
+                  ? " in " + activeSemester
+                  : ""
+              }`}
+            />
+          </div>
         </div>
       )}
     </div>
