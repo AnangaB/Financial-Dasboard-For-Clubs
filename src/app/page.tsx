@@ -1,7 +1,7 @@
 "use client";
 
 import BarChart from "@/components/Charts/BarChart";
-import LineChart from "@/components/Charts/LineChart";
+import CoreBalanceLineChart from "@/components/Charts/CoreBalanceLineChart";
 import PieChart from "@/components/Charts/pieChart";
 import Navbar from "@/components/common/Navbar/Navbar";
 import SemesterBar from "@/components/common/SemesterBar";
@@ -64,13 +64,18 @@ export default function Home() {
         />
       )}
 
-      {displayData && displayReimbursementData && (
+      {allData && displayData && displayReimbursementData && (
         <div className="flex justify-between flex-wrap items-center p-1">
           <div className="w-full p-1">
-            <LineChart
-              data={displayData}
+            <CoreBalanceLineChart
+              data={allData}
               moneyColumn={"Amount"}
-              title="Core Balance Changes"
+              title={`Changes in Core Balance${
+                activeSemester && activeSemester != "Overall"
+                  ? " for " + activeSemester
+                  : ""
+              }`}
+              semester={activeSemester}
             />
           </div>
           <div className="w-full md:w-1/2 xl:w-1/3 p-1">
