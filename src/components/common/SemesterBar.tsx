@@ -11,7 +11,7 @@ export default function SemesterBar({
 }: SemesterBarProps) {
   return (
     <nav className="bg-sky-100 p-3">
-      <div className="flex flex-wrap items-center">
+      <div className="flex items-center overflow-x-auto">
         {semesterList &&
           semesterList.length > 0 &&
           semesterList.map((s) => (
