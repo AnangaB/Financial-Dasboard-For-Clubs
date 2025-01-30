@@ -83,7 +83,11 @@ export default function Home() {
               data={displayReimbursementData}
               groupByColumnName="Fund Type"
               columnToSum="Amount"
-              title="Total Reimbursements grouped by Core, Grant and Trust"
+              title={`Sources of Reimbursements${
+                activeSemester && activeSemester != "Overall"
+                  ? " in " + activeSemester
+                  : ""
+              }`}
             />
           </div>
           <div className="w-full md:w-1/2 xl:w-1/3 p-1">
@@ -91,7 +95,11 @@ export default function Home() {
               data={displayReimbursementData}
               groupByColumnName="Spending Category"
               columnToSum="Amount"
-              title="Total Reimbursements grouped by Fund Category"
+              title={`Categories of funds that was Reimbursed${
+                activeSemester && activeSemester != "Overall"
+                  ? " in " + activeSemester
+                  : ""
+              }`}
             />
           </div>
           <div className="w-full md:w-1/2 xl:w-1/3 p-1">
@@ -99,7 +107,11 @@ export default function Home() {
               data={displayReimbursementData}
               groupByColumnName="Requester"
               columnToSum="Amount"
-              title="Total Reimbursements grouped by Requester"
+              title={`Top Recipient of Reimbursements${
+                activeSemester && activeSemester != "Overall"
+                  ? " in " + activeSemester
+                  : ""
+              }`}
             />
           </div>
         </div>
