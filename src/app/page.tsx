@@ -115,7 +115,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="w-full md:w-1/2 p-1">
+          <div className="w-full md:w-1/2 p-2">
             <BarChart
               data={
                 displayReimbursementData.filter(
@@ -131,7 +131,7 @@ export default function Home() {
               }`}
             />
           </div>
-          <div className="w-full md:w-1/2 p-1">
+          <div className="w-full md:w-1/2 p-2">
             <BarChart
               data={
                 displayReimbursementData.filter(

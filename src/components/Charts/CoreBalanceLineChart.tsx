@@ -101,6 +101,8 @@ export default function CoreBalanceLineChart({
         data: runningMoneyValues,
         radius: 8,
         hoverRadius: 15,
+        borderColor: "#32527b",
+        backgroundColor: "#32527b",
       },
     ],
   };

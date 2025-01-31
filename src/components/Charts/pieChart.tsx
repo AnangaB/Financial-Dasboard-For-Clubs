@@ -1,7 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
-import autocolors from "chartjs-plugin-autocolors";
-
 import {
   Chart as ChartJS,
   ArcElement,
@@ -11,7 +9,8 @@ import {
   ChartEvent,
 } from "chart.js";
 import * as d3 from "d3";
-ChartJS.register(ArcElement, Tooltip, Legend, Title, autocolors);
+import { colors } from "@/type/common/chartColors";
+ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
 type PieChartProps = {
   data: d3.DSVRowArray<string>;
@@ -26,37 +25,52 @@ export default function PieChart({
   columnToSum,
   title,
 }: PieChartProps) {
-  const groupedData = d3.rollups(
-    data,
-    (group) =>
-      d3.sum(
-        group,
-        (d) => parseFloat(d[columnToSum]?.replace(/\$/g, "") || "0") // remove dollar signs, and convert to number
-      ),
-    (d) => d[groupByColumnName]!
-  );
-
-  // Extract labels and data for the chart
-  const labels = groupedData.map(([key]) => key);
-  const dataset = groupedData.map(([, value]) => value);
-
-  const dataForChart = {
-    labels,
+  //get colors
+  const [chartData, setChartData] = useState({
+    labels: [] as string[],
     datasets: [
       {
-        data: dataset,
-
+        data: [] as number[],
+        backgroundColor: [] as string[],
+        borderColor: [] as string[],
         borderWidth: 1,
       },
     ],
-  };
+  });
+
+  useEffect(() => {
+    const groupedData = d3.rollups(
+      data,
+      (group) =>
+        d3.sum(
+          group,
+          (d) => parseFloat(d[columnToSum]?.replace(/\$/g, "") || "0") // remove dollar signs, and convert to number
+        ),
+      (d) => d[groupByColumnName]!
+    );
+
+    // Extract labels and data for the chart
+    const labels = groupedData.map(([key]) => key);
+    const dataset = groupedData.map(([, value]) => value);
+    const dataForChart = {
+      labels: labels,
+      datasets: [
+        {
+          data: dataset,
+          borderWidth: 1,
+          backgroundColor: colors,
+          borderColor: colors,
+        },
+      ],
+    };
+
+    setChartData(dataForChart);
+  }, [columnToSum, data, groupByColumnName]);
+
   const options = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      autocolors: {
-        mode: "data" as autocolors,
-      },
       title: {
         display: true,
         text: title,
@@ -74,9 +88,10 @@ export default function PieChart({
       },
     },
   };
+
   return (
     <div className="h-screen max-h-[60vh]">
-      <Pie data={dataForChart} options={options} />
+      <Pie data={chartData} options={options} />
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import autocolors from "chartjs-plugin-autocolors";
 
 import {
   Chart as ChartJS,
@@ -12,6 +11,7 @@ import {
   Legend,
 } from "chart.js";
 import * as d3 from "d3";
+import { colors } from "@/type/common/chartColors";
 
 ChartJS.register(
   CategoryScale,
@@ -19,7 +19,6 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  autocolors,
   Legend
 );
 type BarChartProps = {
@@ -51,6 +50,8 @@ export default function BarChart({
       {
         label: "Funds Spent",
         data: dataValues,
+        backgroundColor: colors,
+        borderColor: colors,
       },
     ],
   };
@@ -58,9 +59,6 @@ export default function BarChart({
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      autocolors: {
-        mode: "data" as autocolors,
-      },
       title: {
         display: true,
         text: title,
