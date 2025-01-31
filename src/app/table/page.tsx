@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "@/components/common/Navbar/Navbar";
 import { setRawData } from "@/logic/common/setRawDataAndReimbursementData";
+import { getDataTableColumns } from "@/logic/Data Table Display/getDataTableColumn";
 import { Columns, Table } from "antd";
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
@@ -22,12 +23,10 @@ export default function DataTable() {
     : [];
 
   useEffect(() => {
-    const header = data?.columns.map((col) => ({
-      title: col,
-      dataIndex: col,
-      key: col,
-    })) as Columns;
-    setColumns(header);
+    if (data) {
+      const header = getDataTableColumns(data);
+      setColumns(header);
+    }
   }, [data]);
 
   return (
