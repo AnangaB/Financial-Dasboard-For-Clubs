@@ -76,7 +76,9 @@ export default function PieChart({
         text: title,
         font: {
           size: 18,
+          weight: "normal" as const,
         },
+        color: "black",
 
         padding: {
           top: 10,

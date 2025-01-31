@@ -63,8 +63,10 @@ export default function BarChart({
         display: true,
         text: title,
         font: {
-          size: 18,
+          size: 20,
+          weight: "normal" as const,
         },
+        color: "black",
       },
       legend: {
         display: false,
