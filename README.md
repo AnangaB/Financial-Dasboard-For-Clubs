@@ -68,6 +68,7 @@ This financial dashboard project is designed to help clubs and student unions at
 ### Built With
 
 - [![Next][Next.js]][Next-url]
+- [![TypeScript][typescript]][TypeScript-url]
 - [![Chart.js][Chart.js]][Chart-url]
 - [![D3.js][D3.js]][D3-url]
 - [![Tailwind CSS][tailwindcss]][Tailwind-url]
@@ -147,3 +148,6 @@ Project Link: [https://github.com/AnangaB/Financial-Dasboard-For-Clubs](https://
 [D3-url]: https://d3js.org/
 [tailwindcss]: https://img.shields.io/badge/Tailwind_CSS-grey?style=for-the-badge&logo=tailwind-css&logoColor=white
 [Tailwind-url]: https://tailwindcss.com/
+[typescript]: https://img.shields.io/badge/TypeScript-grey?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+
